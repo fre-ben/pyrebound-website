@@ -1,4 +1,4 @@
-# MultiLaunch: Multi-Brand Website Template
+# MultiLaunch: Astro Multi-Brand Website Template
 
 ![MultiLaunch Template Preview](https://www.datocms-assets.com/150921/1743700109-multi-launch.png)
 
