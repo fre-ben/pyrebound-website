@@ -8,12 +8,12 @@
     "lint": "turbo run lint"
   },
   "dependencies": {
-    "@astrojs/vercel": "8.1.3",
-    "@datocms/astro": "^0.4.1",
-    "@datocms/cda-client": "^0.2.5",
-    "@tailwindcss/vite": "^4.0.1",
-    "astro": "5.5.4",
-    "tailwindcss": "^4.0.1"
+    "@astrojs/vercel": "^10.0.0",
+    "@datocms/astro": "^0.6.11",
+    "@datocms/cda-client": "^0.2.10",
+    "@tailwindcss/vite": "^4.2.1",
+    "astro": "^6.0.4",
+    "tailwindcss": "^4.2.1"
   },
   "devDependencies": {
     "turbo": "latest"
