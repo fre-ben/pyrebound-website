@@ -1,0 +1,88 @@
+---
+interface Logo {
+  label: string;
+}
+
+interface Props {
+  form: {
+    title: string;
+    subtitle?: string;
+    submitUrl?: string;
+    submitLabel?: string;
+    emailLabel?: string;
+    emailPlaceholder?: string;
+    messageLabel?: string;
+    messagePlaceholder?: string;
+    logos?: Logo[];
+    companyTitle?: string;
+    companyName?: string;
+  };
+}
+
+const { form } = Astro.props;
+---
+
+<div class="p-3">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-2 p-6 bg-card">
+    <div class="space-y-4">
+      <h2 class="text-2xl">{form.title}</h2>
+      {form.subtitle && <div class="text-xs leading-4">{form.subtitle}</div>}
+      {
+        form.logos && form.logos.length > 0 && (
+          <div class="flex">
+            <ul class="flex flex-wrap">
+              {form.logos.map((logo) => (
+                <li class="px-4 py-2 border border-border">
+                  <span class="text-xs font-mono uppercase select-none">{logo.label}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )
+      }
+      {form.companyTitle && <p class="text-xs">{form.companyTitle}</p>}
+      {
+        form.companyName && (
+          <div class="flex">
+            <span class="text-sm font-mono uppercase select-none">{form.companyName}</span>
+          </div>
+        )
+      }
+    </div>
+
+    <form action={form.submitUrl ?? '#'} id="contactform">
+      <div class="pt-2 px-4 pb-4 bg-background border border-border">
+        <label for="email" class="block text-xs mb-1 select-none"
+          >{form.emailLabel ?? 'Email'}</label
+        >
+        <input
+          type="email"
+          name="email"
+          id="email"
+          class="block w-full min-w-0 text-base placeholder:text-muted focus:outline-none bg-transparent"
+          placeholder={form.emailPlaceholder ?? ''}
+        />
+      </div>
+
+      <div class="pt-2 px-4 pb-4 bg-background border-l border-r border-border">
+        <label for="request" class="block text-xs mb-1 select-none"
+          >{form.messageLabel ?? 'Message'}</label
+        >
+        <textarea
+          name="request"
+          id="request"
+          rows="3"
+          class="block w-full min-w-0 text-base placeholder:text-muted focus:outline-none bg-transparent resize-none"
+          placeholder={form.messagePlaceholder ?? ''}></textarea>
+      </div>
+
+      <div class="pt-2 px-4 pb-4 bg-background border border-border">
+        <input
+          type="submit"
+          value={form.submitLabel ?? 'Send'}
+          class="block w-full p-1.5 text-xs uppercase text-center bg-primary select-none text-primary-foreground cursor-pointer"
+        />
+      </div>
+    </form>
+  </div>
+</div>

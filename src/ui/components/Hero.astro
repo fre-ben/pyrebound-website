@@ -1,0 +1,37 @@
+---
+import PrimaryButton from './PrimaryButton.astro';
+
+interface Cta {
+  label: string;
+  url: string;
+  variant?: 'primary' | 'secondary';
+}
+
+interface Props {
+  hero: {
+    heroTitle: string;
+    heroSubtitle?: string;
+    ctas?: Cta[];
+  };
+}
+
+const { hero } = Astro.props;
+---
+
+<section>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-3 p-4">
+    <div class="flex flex-col gap-4 p-4">
+      <h1 class="text-4xl wrap-break-word leading-tight">{hero.heroTitle}</h1>
+      <div class="flex flex-wrap gap-4 mb-6">
+        {
+          hero.ctas &&
+            hero.ctas.length > 0 &&
+            hero.ctas.map((cta) => (
+              <PrimaryButton label={cta.label} url={cta.url} variant={cta.variant ?? 'primary'} />
+            ))
+        }
+      </div>
+    </div>
+    {hero.heroSubtitle && <div class="p-4 text-base leading-7 text-muted">{hero.heroSubtitle}</div>}
+  </div>
+</section>

@@ -6,14 +6,17 @@ A high-performance monorepo template built with Astro & DatoCMS for managing mul
 Ideal for startups and mid-sized retailers needing a scalable, cost-effective, and multi-language brand hierarchy.
 
 ## Demo
+
 [Live Demo](https://astro-dato-multilaunch.vercel.app/en/)
 
 ## Tech Stack
+
 - Astro
 - DatoCMS
 - Tailwind CSS 4
 
 ## Features
+
 - ✅ Multi-Brand Architecture – One main site, multiple brand landing pages
 - ✅ Rapid Deployment – Add a new brand in minutes, not weeks
 - ✅ Monorepo Setup – All brands in one repository for easy management
@@ -23,6 +26,7 @@ Ideal for startups and mid-sized retailers needing a scalable, cost-effective, a
 - ✅ Dark & Light Mode
 
 ## Quick Start
+
 1. Create an account on DatoCMS
 2. Deploy on Vercel with GitHub Integration
 3. Let DatoCMS set up your project:
@@ -32,10 +36,12 @@ Ideal for startups and mid-sized retailers needing a scalable, cost-effective, a
 ## Local Setup
 
 ### Prerequisites
+
 - Node.js
 - Bun
 
 ### Project Structure
+
 ```
 multilaunch/
 ├── apps/
@@ -46,6 +52,7 @@ multilaunch/
 ```
 
 ### Getting Started
+
 ```bash
 # Install dependencies
 bun install
@@ -55,12 +62,14 @@ cp .env.example .env
 ```
 
 ### Environment Variables
+
 1. Go to DatoCMS project Settings
 2. Navigate to API tokens
 3. Copy Read-only API token
 4. Paste into `.env` file
 
 ## Available Scripts
+
 ```bash
 # Run development server
 bun dev
@@ -73,4 +82,5 @@ bun run preview
 ```
 
 ## Contributing
+
 Contributions are welcome!

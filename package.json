@@ -1,22 +1,36 @@
 {
-  "name": "multilaunch",
-  "workspaces": ["apps/*", "packages/*"],
-  "private": true,
+  "name": "pyrebound-website",
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "astro check"
   },
   "dependencies": {
-    "@astrojs/vercel": "^10.0.0",
-    "@datocms/astro": "^0.6.11",
-    "@datocms/cda-client": "^0.2.10",
     "@tailwindcss/vite": "^4.2.1",
     "astro": "^6.0.4",
     "tailwindcss": "^4.2.1"
   },
+  "packageManager": "pnpm@10.0.0",
   "devDependencies": {
-    "turbo": "latest"
-  },
-  "packageManager": "bun@1.2.5"
+    "@astrojs/check": "^0.9.8",
+    "@eslint/js": "^10.0.1",
+    "@typescript-eslint/eslint-plugin": "^8.58.0",
+    "@typescript-eslint/parser": "^8.58.0",
+    "eslint": "^10.1.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-astro": "^1.6.0",
+    "globals": "^17.4.0",
+    "prettier": "^3.8.1",
+    "prettier-plugin-astro": "^0.14.1",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.58.0"
+  }
 }

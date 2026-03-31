@@ -1,0 +1,67 @@
+---
+import Layout from '../ui/layouts/Layout.astro';
+import Heading from '../ui/components/Heading.astro';
+import Hero from '../ui/components/Hero.astro';
+import BrandCard from '../ui/components/BrandCard.astro';
+import ContactForm from '../ui/components/ContactForm.astro';
+import '../styles/style.css';
+import Footer from '../ui/components/Footer.astro';
+
+const navLinks = [
+  { label: 'Marken', href: '#brands' },
+  { label: 'Über', href: '#about' },
+];
+
+const hero = {
+  heroTitle: 'Mehrere Marken.\nEine Plattform.\nGrenzenlos skalierbar.',
+  heroSubtitle:
+    'MultiLaunch ist ein leistungsstarkes Template auf Basis von Astro — ideal für Startups und mittelgroße Händler, die mehrere Marken effizient und kostengünstig verwalten möchten.',
+  ctas: [
+    { label: 'Marken entdecken', url: '#brands', variant: 'primary' as const },
+    { label: 'Kontakt aufnehmen', url: '#contact', variant: 'secondary' as const },
+  ],
+};
+
+const brands = [
+  { name: 'Alpha Brand', productType: 'Elektronik', href: '#' },
+  { name: 'Beta Brand', productType: 'Mode', href: '#' },
+  { name: 'Gamma Brand', productType: 'Sport', href: '#' },
+  { name: 'Delta Brand', productType: 'Lifestyle', href: '#' },
+];
+
+const form = {
+  title: 'Starten Sie noch heute',
+  subtitle: 'Nehmen Sie Kontakt auf und erfahren Sie, wie wir Ihnen helfen können.',
+  submitUrl: '#',
+  submitLabel: 'Absenden',
+  emailLabel: 'E-Mail',
+  emailPlaceholder: 'ihre@email.de',
+  messageLabel: 'Nachricht',
+  messagePlaceholder: 'Wie können wir helfen?',
+  logos: [{ label: 'Astro' }, { label: 'Vercel' }],
+  companyTitle: 'Powered by',
+  companyName: 'MultiLaunch',
+};
+---
+
+<Layout
+  title="MultiLaunch"
+  siteName="MultiLaunch"
+  copyrightText="Alle Rechte vorbehalten."
+  navLinks={navLinks}
+>
+  <Heading index="01" text="Zuhause" />
+  <Hero hero={hero} />
+
+  <Heading index="02" text="Top-Produkte" />
+  <div id="brands" class="pt-6 px-4 pb-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+      {brands.map((brand) => <BrandCard brand={brand} />)}
+    </div>
+  </div>
+
+  <Heading index="03" text="Kontakt" />
+  <div id="contact about">
+    <ContactForm form={form} />
+  </div>
+</Layout>
