@@ -1,86 +1,74 @@
-# MultiLaunch: Astro Multi-Brand Website Template
+# Pyrebound website
 
-![MultiLaunch Template Preview](https://www.datocms-assets.com/150921/1743700109-multi-launch.png)
-
-A high-performance monorepo template built with Astro & DatoCMS for managing multiple brands effortlessly.
-Ideal for startups and mid-sized retailers needing a scalable, cost-effective, and multi-language brand hierarchy.
-
-## Demo
-
-[Live Demo](https://astro-dato-multilaunch.vercel.app/en/)
+A static marketing site built with Astro, Tailwind CSS v4, and pnpm.
 
 ## Tech Stack
 
-- Astro
-- DatoCMS
-- Tailwind CSS 4
+- [Astro](https://astro.build) — static site generator
+- [Tailwind CSS v4](https://tailwindcss.com) — utility-first styling
+- [pnpm](https://pnpm.io) — package manager
+- [ESLint](https://eslint.org) + [Prettier](https://prettier.io) — linting and formatting
 
-## Features
+## Project Structure
 
-- ✅ Multi-Brand Architecture – One main site, multiple brand landing pages
-- ✅ Rapid Deployment – Add a new brand in minutes, not weeks
-- ✅ Monorepo Setup – All brands in one repository for easy management
-- ✅ AI-Powered Translation – Multi-language support with AI-assisted translations
-- ✅ Geo-Redirects – Serve region-specific content automatically
-- ✅ Brand-Specific Customization – Each brand gets its own colors and assets
-- ✅ Dark & Light Mode
+```
+pyrebound-website/
+├── public/
+│   ├── favicon.svg
+│   └── scripts/main.js       # Client-side JS (theme, carousel)
+└── src/
+    ├── pages/
+    │   └── index.astro        # Main page
+    ├── styles/
+    │   └── style.css
+    └── ui/
+        ├── components/        # Astro UI components
+        ├── layouts/
+        │   └── Layout.astro
+        └── styles/
+            └── global.css     # Tailwind v4 design tokens
+```
 
-## Quick Start
-
-1. Create an account on DatoCMS
-2. Deploy on Vercel with GitHub Integration
-3. Let DatoCMS set up your project:
-
-[![Clone DatoCMS project](https://dashboard.datocms.com/clone/button.svg)](https://dashboard.datocms.com/deploy?repo=bejamas%2Fastro-dato-multilaunch)
-
-## Local Setup
+## Getting Started
 
 ### Prerequisites
 
-- Node.js
-- Bun
+- Node.js 18+
+- pnpm
 
-### Project Structure
-
-```
-multilaunch/
-├── apps/
-│   ├── core/       # Main retail company page
-│   └── brands/     # Brand landing pages
-└── packages/
-    └── ui/         # Shared UI components
-```
-
-### Getting Started
+### Install
 
 ```bash
-# Install dependencies
-bun install
-
-# Set up environment variables
-cp .env.example .env
+pnpm install
 ```
 
-### Environment Variables
+### Development
 
-1. Go to DatoCMS project Settings
-2. Navigate to API tokens
-3. Copy Read-only API token
-4. Paste into `.env` file
+```bash
+pnpm dev
+```
+
+### Build
+
+```bash
+pnpm build
+```
+
+### Preview production build
+
+```bash
+pnpm preview
+```
 
 ## Available Scripts
 
-```bash
-# Run development server
-bun dev
-
-# Build for production
-bun run build
-
-# Preview production build
-bun run preview
-```
-
-## Contributing
-
-Contributions are welcome!
+| Script              | Description                      |
+| ------------------- | -------------------------------- |
+| `pnpm dev`          | Start development server         |
+| `pnpm build`        | Build for production             |
+| `pnpm preview`      | Preview production build         |
+| `pnpm lint`         | Run ESLint                       |
+| `pnpm lint:fix`     | Run ESLint with auto-fix         |
+| `pnpm format`       | Format all files with Prettier   |
+| `pnpm format:check` | Check formatting without writing |
+| `pnpm typecheck`    | Run Astro type checker           |
