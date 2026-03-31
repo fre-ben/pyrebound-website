@@ -12,8 +12,10 @@ interface Props {
 const { siteName, navLinks = [] } = Astro.props;
 ---
 
-<header class="col-start-2 p-4 border-x border-border">
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 items-center">
+<header
+  class="col-start-2 p-4 border-x border-border sticky top-0 z-50 bg-background/80 backdrop-blur-sm"
+>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 items-center">
     <span class="select-none text-sm font-mono uppercase tracking-widest">{siteName}</span>
     <nav>
       <ul class="flex justify-end gap-4">
