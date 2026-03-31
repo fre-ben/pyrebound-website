@@ -16,12 +16,14 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.2.1",
     "astro": "^6.0.4",
+    "astro-icon": "^1.1.5",
     "tailwindcss": "^4.2.1"
   },
   "packageManager": "pnpm@10.0.0",
   "devDependencies": {
     "@astrojs/check": "^0.9.8",
     "@eslint/js": "^10.0.1",
+    "@iconify-json/pixel": "^1.2.1",
     "@typescript-eslint/eslint-plugin": "^8.58.0",
     "@typescript-eslint/parser": "^8.58.0",
     "eslint": "^10.1.0",

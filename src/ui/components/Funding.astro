@@ -1,0 +1,15 @@
+---
+interface Props {
+  src?: string;
+  alt?: string;
+}
+
+const {
+  src = '/funding/eu_saxony_emblem.png',
+  alt = 'Logo of EU and Saxony. This project is cofinanced by the EU. This measure is co-financed by tax funds from the Free State of Saxony.',
+} = Astro.props;
+---
+
+<section id="funding" class="w-full pb-6 px-2 sm:px-4">
+  <img src={src} alt={alt} class="max-w-full" />
+</section>

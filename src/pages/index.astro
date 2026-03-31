@@ -4,11 +4,14 @@ import Heading from '../ui/components/Heading.astro';
 import Hero from '../ui/components/Hero.astro';
 import BrandCard from '../ui/components/BrandCard.astro';
 import ContactForm from '../ui/components/ContactForm.astro';
+import LogoBanner from '../ui/components/LogoBanner.astro';
+import SocialLinks from '../ui/components/SocialLinks.astro';
+import Funding from '../ui/components/Funding.astro';
 import '../styles/style.css';
 
 const navLinks = [
-  { label: 'Marken', href: '#brands' },
-  { label: 'Über', href: '#about' },
+  { label: 'Socials', href: '#socials' },
+  { label: 'Funding', href: '#funding' },
 ];
 
 const hero = {
@@ -39,25 +42,27 @@ const form = {
   messagePlaceholder: 'Wie können wir helfen?',
   logos: [{ label: 'Astro' }, { label: 'Vercel' }],
   companyTitle: 'Powered by',
-  companyName: 'MultiLaunch',
+  companyName: 'Threshold Sun Games',
 };
 ---
 
 <Layout
-  title="MultiLaunch"
-  siteName="MultiLaunch"
+  title="Threshold Sun Games"
+  siteName="Threshold Sun Games"
   copyrightText="Alle Rechte vorbehalten."
   navLinks={navLinks}
 >
-  <Heading index="01" text="Zuhause" />
-  <Hero hero={hero} />
+  <LogoBanner
+    srcDark="/logo/white_solo_512w.png"
+    srcLight="/logo/black_solo_512w.png"
+    alt="Threshold Sun Games"
+  />
 
-  <Heading index="02" text="Top-Produkte" />
-  <div id="brands" class="pt-6 px-4 pb-4">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-      {brands.map((brand) => <BrandCard brand={brand} />)}
-    </div>
-  </div>
+  <Heading index="01" text="Socials" />
+  <SocialLinks />
+
+  <Heading index="02" text="Funding" />
+  <Funding />
 
   <Heading index="03" text="Kontakt" />
   <div id="contact about">
