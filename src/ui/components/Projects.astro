@@ -1,0 +1,50 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  title?: string;
+  description?: string;
+  imageSrc?: string;
+  imageAlt?: string;
+  ctaLabel?: string;
+  ctaUrl?: string;
+}
+
+const {
+  title = 'Pyrebound',
+  description = 'Pyrebound is a top-down exploration adventure game in which the player is always trying to move further into the darkness by burning pyres made from corpses of the undead in an  unconventional, non-stationary tower defense-style loop.',
+  imageSrc = '/pyrebound/splash_main_torch.png',
+  imageAlt = 'Pyrebound – hooded figure with flame and sword',
+  ctaLabel = 'Wishlist on Steam',
+  ctaUrl = 'https://store.steampowered.com/',
+} = Astro.props;
+---
+
+<section id="projects" class="w-full px-2 pb-6 sm:px-4">
+  <div class="grid grid-cols-1 sm:grid-cols-2 bg-card overflow-hidden">
+    <div class="overflow-hidden">
+      <img
+        src={imageSrc}
+        alt={imageAlt}
+        width={512}
+        height={512}
+        class="w-full h-full object-cover select-none"
+      />
+    </div>
+    <div class="flex flex-col justify-between gap-4 p-6">
+      <div class="flex flex-col gap-3">
+        <h2 class="text-xl font-mono uppercase tracking-widest">{title}</h2>
+        <p class="text-sm text-foreground">{description}</p>
+      </div>
+      <a href={ctaUrl} target="_blank" class="corner-effect select-none self-center">
+        <span class="corner"></span>
+        <span
+          class="relative z-10 flex items-center gap-2 px-4 py-2 text-s whitespace-nowrap uppercase bg-primary text-primary-foreground"
+        >
+          <Icon name="pixel:steam" size={24} />
+          {ctaLabel}
+        </span>
+      </a>
+    </div>
+  </div>
+</section>

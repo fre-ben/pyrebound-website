@@ -8,7 +8,7 @@ export default defineConfig({
   integrations: [
     icon({
       include: {
-        pixel: ['linkedin', 'youtube', 'instagram', 'bluesky'],
+        pixel: ['linkedin', 'youtube', 'instagram', 'bluesky', 'steam'],
       },
     }),
   ],

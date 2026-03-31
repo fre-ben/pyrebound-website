@@ -1,17 +1,17 @@
 ---
 import Layout from '../ui/layouts/Layout.astro';
 import Heading from '../ui/components/Heading.astro';
-import Hero from '../ui/components/Hero.astro';
-import BrandCard from '../ui/components/BrandCard.astro';
 import ContactForm from '../ui/components/ContactForm.astro';
 import LogoBanner from '../ui/components/LogoBanner.astro';
 import SocialLinks from '../ui/components/SocialLinks.astro';
 import Funding from '../ui/components/Funding.astro';
+import Projects from '../ui/components/Projects.astro';
 import '../styles/style.css';
 
 const navLinks = [
   { label: 'Socials', href: '#socials' },
   { label: 'Funding', href: '#funding' },
+  { label: 'Projects', href: '#projects' },
 ];
 
 const hero = {
@@ -64,7 +64,10 @@ const form = {
   <Heading index="02" text="Funding" />
   <Funding />
 
-  <Heading index="03" text="Kontakt" />
+  <Heading index="03" text="Projects" />
+  <Projects />
+
+  <Heading index="04" text="Kontakt" />
   <div id="contact about">
     <ContactForm form={form} />
   </div>
