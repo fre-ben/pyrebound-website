@@ -2,6 +2,7 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Line from '../components/Line.astro';
+import '../../styles/style.css';
 
 interface NavLink {
   label: string;
@@ -9,20 +10,11 @@ interface NavLink {
 }
 
 interface Props {
-  title?: string;
-  siteName?: string;
-  copyrightText?: string;
   navLinks?: NavLink[];
   primaryColor?: string;
 }
 
-const {
-  title = 'Pyrebound',
-  siteName = 'Pyrebound',
-  copyrightText = 'Alle Rechte vorbehalten.',
-  navLinks = [],
-  primaryColor,
-} = Astro.props;
+const { navLinks = [], primaryColor } = Astro.props;
 ---
 
 <html lang="en" class="dark">
@@ -30,7 +22,7 @@ const {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" href="/favicon.png" />
-    <title>{title}</title>
+    <title>Threshold Sun Games</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -60,12 +52,12 @@ const {
     <div
       class="grid min-h-screen grid-rows-[auto_1fr_auto] grid-cols-[minmax(1em,1fr)_minmax(0,var(--outer-container-width))_minmax(1em,1fr)]"
     >
-      <Header siteName={siteName} navLinks={navLinks} />
+      <Header navLinks={navLinks} />
       <main class="col-start-2 bg-background border-x border-border">
         <slot />
         <Line />
       </main>
-      <Footer siteName={siteName} copyrightText={copyrightText} />
+      <Footer />
     </div>
   </body>
 </html>

@@ -1,12 +1,5 @@
 ---
 import ThemeSwitcher from './ThemeSwitcher.astro';
-
-interface Props {
-  siteName: string;
-  copyrightText?: string;
-}
-
-const { siteName, copyrightText = 'All rights reserved.' } = Astro.props;
 ---
 
 <footer
@@ -15,7 +8,7 @@ const { siteName, copyrightText = 'All rights reserved.' } = Astro.props;
   <div class="flex justify-between gap-6 items-center max-w-3xl mx-auto p-4 border-x border-border">
     <p class="text-xs uppercase opacity-[.64]">
       &copy; {new Date().getFullYear()}
-      {siteName}. {copyrightText}
+      Threshold Sun Games. <a href="/imprint" class="underline ml-4">imprint</a>
     </p>
     <div>
       <ThemeSwitcher />

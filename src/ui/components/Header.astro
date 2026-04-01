@@ -5,18 +5,19 @@ interface NavLink {
 }
 
 interface Props {
-  siteName: string;
   navLinks?: NavLink[];
 }
 
-const { siteName, navLinks = [] } = Astro.props;
+const { navLinks = [] } = Astro.props;
 ---
 
 <header
   class="col-start-2 p-4 border-x border-border sticky top-0 z-50 bg-background/80 backdrop-blur-sm"
 >
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 items-center">
-    <span class="select-none text-sm font-mono uppercase tracking-widest">{siteName}</span>
+    <a href="/" class="select-none text-sm font-mono uppercase tracking-widest"
+      >Threshold Sun Games</a
+    >
     <nav>
       <ul class="flex justify-end gap-4">
         {

@@ -18,17 +18,19 @@ const {
 } = Astro.props;
 ---
 
-<section class="flex flex-col items-center py-4">
-  <img
-    src={srcDark}
-    data-src-dark={srcDark}
-    data-src-light={srcLight}
-    alt={alt}
-    width={width}
-    height={height}
-    class="logo-theme max-w-[512px] w-full select-none"
-  />
-</section>
+<a href="/">
+  <section class="flex flex-col items-center py-4">
+    <img
+      src={srcDark}
+      data-src-dark={srcDark}
+      data-src-light={srcLight}
+      alt={alt}
+      width={width}
+      height={height}
+      class="logo-theme max-w-[512px] w-full select-none"
+    />
+  </section>
+</a>
 <Line />
 
 <script>

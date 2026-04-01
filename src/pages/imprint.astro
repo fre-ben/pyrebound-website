@@ -1,0 +1,17 @@
+---
+import Heading from '../ui/components/Heading.astro';
+import Legal from '../ui/components/Legal.astro';
+import LogoBanner from '../ui/components/LogoBanner.astro';
+import Layout from '../ui/layouts/Layout.astro';
+---
+
+<Layout navLinks={[]}>
+  <LogoBanner
+    srcDark="/logo/white_solo_512w.png"
+    srcLight="/logo/black_solo_512w.png"
+    alt="Threshold Sun Games"
+  />
+
+  <Heading index="01" text="Legal" />
+  <Legal />
+</Layout>
