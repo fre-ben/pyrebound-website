@@ -1,7 +1,6 @@
 ---
 import Layout from '../ui/layouts/Layout.astro';
 import Heading from '../ui/components/Heading.astro';
-import ContactForm from '../ui/components/ContactForm.astro';
 import LogoBanner from '../ui/components/LogoBanner.astro';
 import SocialLinks from '../ui/components/SocialLinks.astro';
 import Funding from '../ui/components/Funding.astro';
@@ -12,20 +11,6 @@ const navLinks = [
   { label: 'Funding', href: '#funding' },
   { label: 'Projects', href: '#projects' },
 ];
-
-const form = {
-  title: 'Starten Sie noch heute',
-  subtitle: 'Nehmen Sie Kontakt auf und erfahren Sie, wie wir Ihnen helfen können.',
-  submitUrl: '#',
-  submitLabel: 'Absenden',
-  emailLabel: 'E-Mail',
-  emailPlaceholder: 'ihre@email.de',
-  messageLabel: 'Nachricht',
-  messagePlaceholder: 'Wie können wir helfen?',
-  logos: [{ label: 'Astro' }, { label: 'Vercel' }],
-  companyTitle: 'Powered by',
-  companyName: 'Threshold Sun Games',
-};
 ---
 
 <Layout navLinks={navLinks}>
@@ -44,8 +29,11 @@ const form = {
   <Heading index="03" text="Projects" />
   <Projects />
 
-  <Heading index="04" text="Kontakt" />
-  <div id="contact about">
-    <ContactForm form={form} />
-  </div>
+  <Heading index="04" text="Contact" />
+  <section class="px-2 sm:px-4 pb-6">
+    Reach out to me anytime at:
+    <a href="mailto:contact@thresholdsungames.com" class="underline"
+      >contact@thresholdsungames.com</a
+    >
+  </section>
 </Layout>
