@@ -13,16 +13,17 @@ interface Props {
 
 const {
   links = [
-    { label: 'LinkedIn', href: '#', icon: 'pixel:linkedin' },
-    { label: 'YouTube', href: '#', icon: 'pixel:youtube' },
-    { label: 'Instagram', href: '#', icon: 'pixel:instagram' },
-    { label: 'Bluesky', href: '#', icon: 'pixel:bluesky' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/fabsch', icon: 'pixel:linkedin' },
+    { label: 'Twitch', href: 'https://www.twitch.tv/indrome', icon: 'pixel:twitch' },
+    // { label: 'YouTube', href: '#', icon: 'pixel:youtube' },
+    // { label: 'Instagram', href: '#', icon: 'pixel:instagram' },
+    // { label: 'Bluesky', href: '#', icon: 'pixel:bluesky' },
   ],
 } = Astro.props;
 ---
 
 <section id="socials" class="w-full px-2 pb-6 sm:px-30">
-  <ul class="flex items-center justify-between">
+  <ul class="flex items-center justify-center gap-16">
     {
       links.map((link) => (
         <li>

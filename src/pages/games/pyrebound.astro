@@ -1,0 +1,262 @@
+---
+import Heading from '../../ui/components/Heading.astro';
+import Line from '../../ui/components/Line.astro';
+import LogoBanner from '../../ui/components/LogoBanner.astro';
+import Layout from '../../ui/layouts/Layout.astro';
+
+const screenshots = [
+  '/games/pyrebound/image_3.png',
+  '/games/pyrebound/image_4.png',
+  '/games/pyrebound/image_6.png',
+  '/games/pyrebound/image_7.png',
+  '/games/pyrebound/image_8.png',
+  '/games/pyrebound/image_10.png',
+  '/games/pyrebound/image_11.png',
+  '/games/pyrebound/image_12.png',
+  '/games/pyrebound/image_13.png',
+  '/games/pyrebound/image_13-1.png',
+  '/games/pyrebound/image_14.png',
+  '/games/pyrebound/image_15.png',
+  '/games/pyrebound/image_17.png',
+  '/games/pyrebound/image_19.png',
+  '/games/pyrebound/image_21.png',
+];
+---
+
+<Layout navLinks={[{ label: 'Home', href: '/' }]}>
+  <LogoBanner alt="Threshold Sun Games" />
+
+  <!-- Title logotype -->
+  <div class="flex justify-center px-4 py-2">
+    <h1 class="sr-only">Pyrebound</h1>
+    <img src="/games/pyrebound/title_type_main.png" alt="Pyrebound" class="w-full max-w-sm" />
+  </div>
+
+  <!-- Tagline -->
+  <section class="px-4 py-2">
+    <p class="text-xl font-mono font-medium leading-snug text-center">
+      Light can be found even in the darkest of all hours.
+    </p>
+  </section>
+
+  <!-- Elevator Pitch -->
+  <section class="px-4 py-2">
+    <p class="text-base leading-relaxed text-foreground text-center">
+      <strong>Pyrebound</strong> is a <strong>top-down exploration adventure</strong> game in which the
+      player is always trying to move further into the darkness by burning
+      <strong>pyres made from corpses of the undead</strong> in an unconventional,
+      <strong>non-stationary tower defense</strong>-style loop.
+    </p>
+  </section>
+
+  <!-- Value Prop & Emotional Core -->
+  <section class="px-4 py-2">
+    <Heading index="02" text="What It Feels Like" />
+    <div class="space-y-4 text-base leading-relaxed text-foreground">
+      <p>
+        The game offers a <strong>strategic experience</strong> about constantly
+        <strong>balancing safety, defense, offense and mobility</strong> in order to be able to
+        <strong>explore</strong> the world covered by pitch-black,
+        <strong>opaque darkness until lit</strong> by the pyres.
+      </p>
+    </div>
+  </section>
+
+  <!-- Summary -->
+  <section class="px-4 py-2">
+    <Heading index="03" text="The World" />
+    <div class="flex flex-col sm:flex-row gap-8 items-start">
+      <div class="space-y-4 text-base leading-relaxed text-foreground flex-1">
+        <p>
+          Embody a mythological fire spirit tasked with fighting against the ever-encroaching
+          Darkness and rekindling hope in the darkest of all hours.
+        </p>
+        <p>
+          Explore the remnants of an ancient world while constantly driven to restless flight by the
+          darkness and the desiccated undead. Survive to find the lost embers of inspiration and
+          relight the beacons, then return to safety or confront the grand shadows of the world.
+        </p>
+        <p>
+          Build, burn and sustain magical pyres made of the corpses of the Desiccated that hunt you
+          to push away the darkness for a brief time. Keep moving and slowly uncover a mysterious
+          history of ancient technology and crude sorcery.
+        </p>
+      </div>
+      <img
+        src="/games/pyrebound/splash_main_torch.png"
+        alt="The fire spirit surrounded by flames"
+        class="w-full sm:w-60 sm:shrink-0 object-cover"
+        loading="lazy"
+      />
+    </div>
+  </section>
+
+  <!-- Gameplay Breakdown -->
+  <section class="px-4 py-2">
+    <Heading index="04" text="Gameplay" />
+    <div class="grid gap-6 sm:grid-cols-3 py-2">
+      <!-- Hub -->
+      <div class="space-y-2">
+        <h3 class="text-xs font-mono uppercase text-muted">Hub</h3>
+        <p class="text-sm leading-relaxed text-foreground">
+          Get to know the cast of survivors in the Glimmering Glade. Bring them hope, so despair may
+          give way to courage and heart.
+        </p>
+      </div>
+      <!-- Exploration -->
+      <div class="space-y-2">
+        <h3 class="text-xs font-mono uppercase text-muted">Exploration</h3>
+        <p class="text-sm leading-relaxed text-foreground">
+          Explore four hand-crafted areas drenched in darkness. Slay the Desiccated to build pyres
+          and uncover what's hidden. With enough embers, light the beacons to summon the shadows.
+        </p>
+      </div>
+      <!-- Finale -->
+      <div class="space-y-2">
+        <h3 class="text-xs font-mono uppercase text-muted">Finale</h3>
+        <p class="text-sm leading-relaxed text-foreground">
+          After all beacons are lit, one final area awaits. Summon all hope, any who enter here.
+        </p>
+      </div>
+    </div>
+
+    <Line />
+
+    <!-- The Loop -->
+    <div class="mt-6 flex flex-col sm:flex-row gap-8 items-start">
+      <div class="space-y-3 flex-1">
+        <h3 class="text-xs font-mono uppercase text-muted">The Loop</h3>
+        <ol class="space-y-2 text-sm text-foreground">
+          {
+            [
+              'Enemies attack — kill enemies.',
+              'Throw corpses into a pile before they reanimate.',
+              'Choose a pyre type to kindle.',
+              'While the pyre burns, it fights for you.',
+              'Sustain pyres with additional corpses.',
+            ].map((step, i) => (
+              <li class="flex gap-3">
+                <span class="font-mono text-muted shrink-0">
+                  {String(i + 1).padStart(2, '0')} /
+                </span>
+                <span>{step}</span>
+              </li>
+            ))
+          }
+        </ol>
+      </div>
+      <img
+        src="/games/pyrebound/splash_secondary.png"
+        alt="A figure holding a torch, surrounded by the Desiccated"
+        class="w-full sm:w-56 sm:shrink-0 object-cover"
+        loading="lazy"
+      />
+    </div>
+  </section>
+
+  <!-- Screenshots Carousel -->
+  <section class="py-4 border-b border-border">
+    <Heading index="05" text="Screenshots" />
+
+    <div
+      class="relative"
+      id="pyrebound-carousel"
+      tabindex="0"
+      aria-label="Screenshot carousel — use arrow keys to navigate"
+    >
+      <!-- Embla viewport -->
+      <div class="overflow-hidden" id="embla-viewport">
+        <div class="flex" id="embla-container">
+          {
+            screenshots.map((src, i) => (
+              <div class="embla__slide min-w-0 flex-[0_0_100%]">
+                <img
+                  src={src}
+                  alt={`Pyrebound screenshot ${i + 1}`}
+                  class="w-full aspect-video object-cover"
+                  loading={i === 0 ? 'eager' : 'lazy'}
+                />
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- Prev / Next buttons -->
+      <button
+        id="embla-prev"
+        aria-label="Previous screenshot"
+        class="absolute left-2 top-1/2 -translate-y-1/2 z-10 flex h-8 w-8 items-center justify-center border border-border bg-background/80 backdrop-blur-sm text-foreground hover:bg-card transition-colors font-mono text-sm"
+      >
+        ←
+      </button>
+      <button
+        id="embla-next"
+        aria-label="Next screenshot"
+        class="absolute right-2 top-1/2 -translate-y-1/2 z-10 flex h-8 w-8 items-center justify-center border border-border bg-background/80 backdrop-blur-sm text-foreground hover:bg-card transition-colors font-mono text-sm"
+      >
+        →
+      </button>
+    </div>
+
+    <!-- Dot indicators -->
+    <div class="flex justify-center gap-2 mt-4 px-4" id="embla-dots">
+      {
+        screenshots.map((_, i) => (
+          <button
+            class="embla-dot h-1 w-4 bg-border transition-colors hover:bg-muted"
+            aria-label={`Go to screenshot ${i + 1}`}
+            data-index={i}
+          />
+        ))
+      }
+    </div>
+  </section>
+</Layout>
+
+<script>
+  import EmblaCarousel from 'embla-carousel';
+
+  const viewport = document.getElementById('embla-viewport') as HTMLElement;
+  const prevBtn = document.getElementById('embla-prev') as HTMLButtonElement;
+  const nextBtn = document.getElementById('embla-next') as HTMLButtonElement;
+  const dotsContainer = document.getElementById('embla-dots') as HTMLElement;
+
+  if (viewport && prevBtn && nextBtn && dotsContainer) {
+    const embla = EmblaCarousel(viewport, { loop: true, dragFree: false });
+    const dots = Array.from(dotsContainer.querySelectorAll<HTMLButtonElement>('.embla-dot'));
+
+    function updateDots(index: number) {
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('bg-primary', i === index);
+        dot.classList.toggle('bg-border', i !== index);
+      });
+    }
+
+    embla.on('select', () => updateDots(embla.selectedScrollSnap()));
+
+    dots.forEach((dot) => {
+      dot.addEventListener('click', () => {
+        const index = Number(dot.dataset.index);
+        embla.scrollTo(index);
+      });
+    });
+
+    prevBtn.addEventListener('click', () => embla.scrollPrev());
+    nextBtn.addEventListener('click', () => embla.scrollNext());
+
+    const carousel = document.getElementById('pyrebound-carousel') as HTMLElement;
+    carousel.addEventListener('keydown', (e: KeyboardEvent) => {
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        embla.scrollPrev();
+      }
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        embla.scrollNext();
+      }
+    });
+
+    updateDots(0);
+  }
+</script>

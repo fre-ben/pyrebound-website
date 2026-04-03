@@ -2,48 +2,23 @@
 import Line from './Line.astro';
 
 interface Props {
-  srcDark?: string;
-  srcLight?: string;
   alt?: string;
   width?: number;
   height?: number;
 }
 
-const {
-  srcDark = '/logo/white_solo_512w.png',
-  srcLight = '/logo/black_solo_512w.png',
-  alt = 'Logo',
-  width = 512,
-  height = 512,
-} = Astro.props;
+const { alt = 'Threshold Sun Games Logo', width = 512, height = 512 } = Astro.props;
 ---
 
 <a href="/">
   <section class="flex flex-col items-center py-4">
     <img
-      src={srcDark}
-      data-src-dark={srcDark}
-      data-src-light={srcLight}
+      src="/logo/tsg_logo.svg"
       alt={alt}
       width={width}
       height={height}
-      class="logo-theme max-w-[512px] w-full select-none"
+      class="max-w-[512px] w-full select-none dark:invert"
     />
   </section>
 </a>
 <Line />
-
-<script>
-  function applyLogoTheme() {
-    const isDark = document.documentElement.classList.contains('dark');
-    document.querySelectorAll<HTMLImageElement>('img.logo-theme').forEach((img) => {
-      img.src = isDark ? (img.dataset.srcDark ?? '') : (img.dataset.srcLight ?? '');
-    });
-  }
-
-  applyLogoTheme();
-
-  new MutationObserver(applyLogoTheme).observe(document.documentElement, {
-    attributeFilter: ['class'],
-  });
-</script>

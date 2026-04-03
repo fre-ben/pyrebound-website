@@ -5,20 +5,18 @@ import LogoBanner from '../ui/components/LogoBanner.astro';
 import SocialLinks from '../ui/components/SocialLinks.astro';
 import Funding from '../ui/components/Funding.astro';
 import Projects from '../ui/components/Projects.astro';
+import Contact from '../ui/components/Contact.astro';
 
 const navLinks = [
   { label: 'Socials', href: '#socials' },
   { label: 'Funding', href: '#funding' },
   { label: 'Projects', href: '#projects' },
+  { label: 'Contact', href: '#contact' },
 ];
 ---
 
 <Layout navLinks={navLinks}>
-  <LogoBanner
-    srcDark="/logo/white_solo_512w.png"
-    srcLight="/logo/black_solo_512w.png"
-    alt="Threshold Sun Games"
-  />
+  <LogoBanner alt="Threshold Sun Games" />
 
   <Heading index="01" text="Socials" />
   <SocialLinks />
@@ -30,10 +28,5 @@ const navLinks = [
   <Projects />
 
   <Heading index="04" text="Contact" />
-  <section class="px-2 sm:px-4 pb-6">
-    Reach out to me anytime at:
-    <a href="mailto:contact@thresholdsungames.com" class="underline"
-      >contact@thresholdsungames.com</a
-    >
-  </section>
+  <Contact />
 </Layout>
