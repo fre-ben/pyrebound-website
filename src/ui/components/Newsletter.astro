@@ -1,0 +1,51 @@
+---
+
+---
+
+<form id="newsletter-form" action="#" class="flex flex-col gap-3" novalidate>
+  <div class="pt-2 px-4 pb-3 bg-card border border-border">
+    <label for="newsletter-email" class="block text-xs mb-1 select-none uppercase tracking-widest">
+      Email
+    </label>
+    <input
+      type="email"
+      id="newsletter-email"
+      name="email"
+      required
+      autocomplete="email"
+      placeholder="you@example.com"
+      class="block w-full text-sm placeholder:text-muted focus:outline-none bg-transparent"
+    />
+  </div>
+
+  <p id="newsletter-msg" class="text-xs text-muted hidden"></p>
+
+  <button type="submit" class="corner-effect select-none self-stretch cursor-pointer">
+    <span class="corner"></span>
+    <span
+      class="relative z-10 flex items-center justify-center gap-2 px-4 py-2 text-xs whitespace-nowrap uppercase bg-primary text-primary-foreground w-full"
+    >
+      Notify me
+    </span>
+  </button>
+</form>
+
+<script>
+  const form = document.getElementById('newsletter-form') as HTMLFormElement | null;
+  const msg = document.getElementById('newsletter-msg');
+
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = (form.elements.namedItem('email') as HTMLInputElement)?.value;
+    if (!email) return;
+
+    // TODO: Replace with n8n workflow logic
+    console.log('Newsletter signup:', email);
+
+    if (msg) {
+      msg.textContent = `Thanks! We'll reach out to ${email} when the page is live.`;
+      msg.classList.remove('hidden');
+    }
+    form.reset();
+  });
+</script>

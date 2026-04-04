@@ -1,5 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components';
+import Dialog from './Dialog.astro';
 
 interface Props {
   title?: string;
@@ -16,7 +17,6 @@ const {
   imageSrc = '/games/pyrebound/splash_main_torch_type.png',
   imageAlt = 'Pyrebound – hooded figure with flame and sword',
   ctaLabel = 'Wishlist on Steam',
-  ctaUrl = 'https://store.steampowered.com/',
 } = Astro.props;
 ---
 
@@ -46,7 +46,12 @@ const {
         </span>
       </a>
 
-      <a href={ctaUrl} target="_blank" class="corner-effect select-none self-center">
+      <button
+        id="cta-btn"
+        class="corner-effect select-none self-center cursor-pointer"
+        aria-haspopup="dialog"
+        aria-controls="coming-soon-dialog"
+      >
         <span class="corner"></span>
         <span
           class="relative z-10 flex items-center gap-2 px-4 py-2 text-s whitespace-nowrap uppercase bg-primary text-primary-foreground"
@@ -54,7 +59,21 @@ const {
           <Icon name="pixel:steam" size={24} />
           {ctaLabel}
         </span>
-      </a>
+      </button>
     </div>
   </div>
 </section>
+
+<Dialog id="coming-soon-dialog" title="Not yet available">
+  <p class="text-base text-foreground">
+    The Steam page for <span class="font-mono uppercase">Pyrebound</span> isn't live yet. <br
+    />Please check again later.
+  </p>
+</Dialog>
+
+<script>
+  const dialog = document.getElementById('coming-soon-dialog') as HTMLDialogElement | null;
+  const openBtn = document.getElementById('cta-btn');
+
+  openBtn?.addEventListener('click', () => dialog?.showModal());
+</script>
