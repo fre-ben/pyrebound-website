@@ -50,8 +50,8 @@ const screenshots = [
   </section>
 
   <!-- Value Prop & Emotional Core -->
-  <section class="px-4 py-2">
-    <Heading index="02" text="What It Feels Like" />
+  <Heading index="01" text="What It Feels Like" />
+  <section class="px-4 py-2 pb-6">
     <div class="space-y-4 text-base leading-relaxed text-foreground">
       <p>
         The game offers a <strong>strategic experience</strong> about constantly
@@ -63,8 +63,8 @@ const screenshots = [
   </section>
 
   <!-- Summary -->
-  <section class="px-4 py-2">
-    <Heading index="03" text="The World" />
+  <Heading index="02" text="The World" />
+  <section class="px-4 py-2 pb-6">
     <div class="flex flex-col sm:flex-row gap-8 items-start">
       <div class="space-y-4 text-base leading-relaxed text-foreground flex-1">
         <p>
@@ -92,8 +92,8 @@ const screenshots = [
   </section>
 
   <!-- Gameplay Breakdown -->
-  <section class="px-4 py-2">
-    <Heading index="04" text="Gameplay" />
+  <Heading index="03" text="Gameplay" />
+  <section class="px-4 py-2 pb-6">
     <div class="grid gap-6 sm:grid-cols-3 py-2 pb-4">
       <!-- Hub -->
       <div class="space-y-2">
@@ -119,43 +119,42 @@ const screenshots = [
         </p>
       </div>
     </div>
+  </section>
 
-    <!-- The Loop -->
-    <Heading index="05" text="The Loop" />
-    <section class="pl-6 sm:pl-8 mt-6 flex flex-col sm:flex-row gap-8 items-start">
-      <div class="space-y-3 flex-1">
-        <ol class="space-y-2 text-base text-foreground">
-          {
-            [
-              'Enemies attack — kill enemies.',
-              'Throw corpses into a pile before they reanimate.',
-              'Choose a pyre type to kindle.',
-              'While the pyre burns, it fights for you.',
-              'Sustain pyres with additional corpses.',
-            ].map((step, i) => (
-              <li class="flex gap-3">
-                <span class="font-mono text-muted shrink-0">
-                  {String(i + 1).padStart(2, '0')} /
-                </span>
-                <span>{step}</span>
-              </li>
-            ))
-          }
-        </ol>
-      </div>
-      <img
-        src="/games/pyrebound/splash_secondary.png"
-        alt="A figure holding a torch, surrounded by the Desiccated"
-        class="w-full sm:w-56 sm:shrink-0 object-cover"
-        loading="lazy"
-      />
-    </section>
+  <!-- The Loop -->
+  <Heading index="04" text="The Loop" />
+  <section class="pl-6 sm:pl-8 mt-2 flex flex-col sm:flex-row gap-8 items-center">
+    <div class="space-y-3 flex-1">
+      <ol class="space-y-2 text-base text-foreground">
+        {
+          [
+            'Enemies attack — kill enemies.',
+            'Throw corpses into a pile before they reanimate.',
+            'Choose a pyre type to kindle.',
+            'While the pyre burns, it fights for you.',
+            'Sustain pyres with additional corpses.',
+          ].map((step, i) => (
+            <li class="flex gap-3 items-baseline">
+              <span class="font-mono text-muted/70 shrink-0 text-xs">
+                {String(i + 1).padStart(2, '0')} /
+              </span>
+              <span>{step}</span>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+    <img
+      src="/games/pyrebound/splash_secondary.png"
+      alt="A figure holding a torch, surrounded by the Desiccated"
+      class="w-full sm:w-56 sm:shrink-0 object-cover"
+      loading="lazy"
+    />
   </section>
 
   <!-- Screenshots Carousel -->
-  <section class="py-4 border-b border-border">
-    <Heading index="06" text="Screenshots" />
-
+  <Heading index="05" text="Screenshots" />
+  <section class="py-2 pb-6 border-b border-border">
     <div
       class="relative"
       id="pyrebound-carousel"
