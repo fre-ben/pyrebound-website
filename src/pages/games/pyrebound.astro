@@ -94,39 +94,37 @@ const screenshots = [
   <!-- Gameplay Breakdown -->
   <section class="px-4 py-2">
     <Heading index="04" text="Gameplay" />
-    <div class="grid gap-6 sm:grid-cols-3 py-2">
+    <div class="grid gap-6 sm:grid-cols-3 py-2 pb-4">
       <!-- Hub -->
       <div class="space-y-2">
-        <h3 class="text-xs font-mono uppercase text-muted">Hub</h3>
-        <p class="text-sm leading-relaxed text-foreground">
+        <h3 class="text-sm font-mono uppercase text-muted">Hub</h3>
+        <p class="text-base leading-relaxed text-foreground">
           Get to know the cast of survivors in the Glimmering Glade. Bring them hope, so despair may
           give way to courage and heart.
         </p>
       </div>
       <!-- Exploration -->
       <div class="space-y-2">
-        <h3 class="text-xs font-mono uppercase text-muted">Exploration</h3>
-        <p class="text-sm leading-relaxed text-foreground">
+        <h3 class="text-sm font-mono uppercase text-muted">Exploration</h3>
+        <p class="text-base leading-relaxed text-foreground">
           Explore four hand-crafted areas drenched in darkness. Slay the Desiccated to build pyres
           and uncover what's hidden. With enough embers, light the beacons to summon the shadows.
         </p>
       </div>
       <!-- Finale -->
       <div class="space-y-2">
-        <h3 class="text-xs font-mono uppercase text-muted">Finale</h3>
-        <p class="text-sm leading-relaxed text-foreground">
+        <h3 class="text-sm font-mono uppercase text-muted">Finale</h3>
+        <p class="text-base leading-relaxed text-foreground">
           After all beacons are lit, one final area awaits. Summon all hope, any who enter here.
         </p>
       </div>
     </div>
 
-    <Line />
-
     <!-- The Loop -->
-    <div class="mt-6 flex flex-col sm:flex-row gap-8 items-start">
+    <Heading index="05" text="The Loop" />
+    <section class="pl-6 sm:pl-8 mt-6 flex flex-col sm:flex-row gap-8 items-start">
       <div class="space-y-3 flex-1">
-        <h3 class="text-xs font-mono uppercase text-muted">The Loop</h3>
-        <ol class="space-y-2 text-sm text-foreground">
+        <ol class="space-y-2 text-base text-foreground">
           {
             [
               'Enemies attack — kill enemies.',
@@ -151,12 +149,12 @@ const screenshots = [
         class="w-full sm:w-56 sm:shrink-0 object-cover"
         loading="lazy"
       />
-    </div>
+    </section>
   </section>
 
   <!-- Screenshots Carousel -->
   <section class="py-4 border-b border-border">
-    <Heading index="05" text="Screenshots" />
+    <Heading index="06" text="Screenshots" />
 
     <div
       class="relative"
