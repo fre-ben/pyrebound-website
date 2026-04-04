@@ -6,6 +6,8 @@ A static marketing site built with Astro, Tailwind CSS v4, and pnpm.
 
 - [Astro](https://astro.build) — static site generator
 - [Tailwind CSS v4](https://tailwindcss.com) — utility-first styling
+- [Embla Carousel](https://www.embla-carousel.com) — carousel/slider
+- [astro-icon](https://github.com/natemoo-re/astro-icon) — icon integration
 - [pnpm](https://pnpm.io) — package manager
 - [ESLint](https://eslint.org) + [Prettier](https://prettier.io) — linting and formatting
 
@@ -14,8 +16,13 @@ A static marketing site built with Astro, Tailwind CSS v4, and pnpm.
 ```
 pyrebound-website/
 ├── public/
-│   ├── favicon.svg
-│   └── scripts/main.js       # Client-side JS (theme, carousel)
+│   ├── favicon.png
+│   ├── fonts/
+│   ├── funding/
+│   ├── games/
+│   ├── logo/
+│   └── scripts/
+│       └── main.js            # Client-side JS (theme, carousel)
 └── src/
     ├── pages/
     │   └── index.astro        # Main page
@@ -23,6 +30,16 @@ pyrebound-website/
     │   └── style.css
     └── ui/
         ├── components/        # Astro UI components
+        │   ├── BrandCard.astro
+        │   ├── Contact.astro
+        │   ├── ContactForm.astro
+        │   ├── Footer.astro
+        │   ├── Funding.astro
+        │   ├── Header.astro
+        │   ├── Hero.astro
+        │   ├── Projects.astro
+        │   ├── ThemeSwitcher.astro
+        │   └── ...
         ├── layouts/
         │   └── Layout.astro
         └── styles/
@@ -33,7 +50,7 @@ pyrebound-website/
 
 ### Prerequisites
 
-- Node.js 18+
+- Node.js 22+
 - pnpm
 
 ### Install
