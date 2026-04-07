@@ -10,10 +10,10 @@ interface Props {
 const { alt = 'Threshold Sun Games Logo', width = 512, height = 512 } = Astro.props;
 ---
 
-<a href="/">
+<a href={import.meta.env.BASE_URL}>
   <section class="flex flex-col items-center py-4">
     <img
-      src="/logo/tsg_logo.svg"
+      src={`${import.meta.env.BASE_URL}logo/tsg_logo.svg`}
       alt={alt}
       width={width}
       height={height}

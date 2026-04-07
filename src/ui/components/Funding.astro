@@ -5,7 +5,7 @@ interface Props {
 }
 
 const {
-  src = '/funding/eu_saxony_emblem.png',
+  src = `${import.meta.env.BASE_URL}funding/eu_saxony_emblem.png`,
   alt = 'Logo of EU and Saxony. This project is cofinanced by the EU. This measure is co-financed by tax funds from the Free State of Saxony.',
 } = Astro.props;
 ---

@@ -14,7 +14,7 @@ interface Props {
 const {
   title = 'Pyrebound',
   description = 'Pyrebound is a top-down exploration adventure game in which the player is always trying to move further into the darkness by burning pyres made from corpses of the undead in an  unconventional, non-stationary tower defense-style loop.',
-  imageSrc = '/games/pyrebound/splash_main_torch_type.png',
+  imageSrc = `${import.meta.env.BASE_URL}games/pyrebound/splash_main_torch_type.png`,
   imageAlt = 'Pyrebound – hooded figure with flame and sword',
   ctaLabel = 'Wishlist on Steam',
 } = Astro.props;
@@ -37,7 +37,7 @@ const {
         <p class="text-sm text-foreground">{description}</p>
       </div>
 
-      <a href="/games/pyrebound" class="corner-effect select-none self-center">
+      <a href={`${import.meta.env.BASE_URL}games/pyrebound`} class="corner-effect select-none self-center">
         <span class="corner"></span>
         <span
           class="relative z-10 flex items-center gap-2 px-4 py-2 text-s whitespace-nowrap uppercase bg-primary text-primary-foreground"
