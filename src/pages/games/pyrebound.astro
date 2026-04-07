@@ -3,32 +3,33 @@ import Heading from '../../ui/components/Heading.astro';
 import LogoBanner from '../../ui/components/LogoBanner.astro';
 import Layout from '../../ui/layouts/Layout.astro';
 
+const base = import.meta.env.BASE_URL;
 const screenshots = [
-  '/games/pyrebound/image_3.png',
-  '/games/pyrebound/image_4.png',
-  '/games/pyrebound/image_6.png',
-  '/games/pyrebound/image_7.png',
-  '/games/pyrebound/image_8.png',
-  '/games/pyrebound/image_10.png',
-  '/games/pyrebound/image_11.png',
-  '/games/pyrebound/image_12.png',
-  '/games/pyrebound/image_13.png',
-  '/games/pyrebound/image_13-1.png',
-  '/games/pyrebound/image_14.png',
-  '/games/pyrebound/image_15.png',
-  '/games/pyrebound/image_17.png',
-  '/games/pyrebound/image_19.png',
-  '/games/pyrebound/image_21.png',
+  `${base}games/pyrebound/image_3.png`,
+  `${base}games/pyrebound/image_4.png`,
+  `${base}games/pyrebound/image_6.png`,
+  `${base}games/pyrebound/image_7.png`,
+  `${base}games/pyrebound/image_8.png`,
+  `${base}games/pyrebound/image_10.png`,
+  `${base}games/pyrebound/image_11.png`,
+  `${base}games/pyrebound/image_12.png`,
+  `${base}games/pyrebound/image_13.png`,
+  `${base}games/pyrebound/image_13-1.png`,
+  `${base}games/pyrebound/image_14.png`,
+  `${base}games/pyrebound/image_15.png`,
+  `${base}games/pyrebound/image_17.png`,
+  `${base}games/pyrebound/image_19.png`,
+  `${base}games/pyrebound/image_21.png`,
 ];
 ---
 
-<Layout navLinks={[{ label: 'Home', href: '/' }]}>
+<Layout navLinks={[{ label: 'Home', href: base }]}>
   <LogoBanner alt="Threshold Sun Games" />
 
   <!-- Title logotype -->
   <div class="flex justify-center px-4 py-2">
     <h1 class="sr-only">Pyrebound</h1>
-    <img src="/games/pyrebound/title_type_main.png" alt="Pyrebound" class="w-full max-w-sm" />
+    <img src={`${base}games/pyrebound/title_type_main.png`} alt="Pyrebound" class="w-full max-w-sm" />
   </div>
 
   <!-- Tagline -->
@@ -82,7 +83,7 @@ const screenshots = [
         </p>
       </div>
       <img
-        src="/games/pyrebound/splash_main_torch.png"
+        src={`${base}games/pyrebound/splash_main_torch.png`}
         alt="The fire spirit surrounded by flames"
         class="w-full sm:w-60 sm:shrink-0 object-cover"
         loading="lazy"
@@ -144,8 +145,8 @@ const screenshots = [
       </ol>
     </div>
     <img
-      src="/games/pyrebound/splash_secondary.png"
-      alt="A figure holding a torch, surrounded by the Desiccated"
+      src={`${base}games/pyrebound/splash_secondary.png`}
+        alt="A figure holding a torch, surrounded by the Desiccated"
       class="w-full sm:w-56 sm:shrink-0 object-cover"
       loading="lazy"
     />
