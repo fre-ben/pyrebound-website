@@ -5,7 +5,11 @@ import LogoBanner from '../ui/components/LogoBanner.astro';
 import Layout from '../ui/layouts/Layout.astro';
 ---
 
-<Layout navLinks={[{ label: 'Home', href: '/' }]}>
+<Layout
+  navLinks={[{ label: 'Home', href: '/' }]}
+  title="Imprint // Threshold Sun Games"
+  description="Legal information and imprint for Threshold Sun Games."
+>
   <LogoBanner alt="Threshold Sun Games" />
 
   <Heading index="01" text="Legal" />

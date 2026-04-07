@@ -22,9 +22,36 @@ const screenshots = [
   `${base}games/pyrebound/image_19.png`,
   `${base}games/pyrebound/image_21.png`,
 ];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'VideoGame',
+  name: 'Pyrebound',
+  description:
+    'A top-down exploration adventure where you push back the darkness by burning pyres made from the corpses of the undead — a non-stationary tower defense loop set in a mythological world.',
+  genre: ['Exploration', 'Adventure', 'Tower Defense'],
+  gamePlatform: 'PC',
+  applicationCategory: 'Game',
+  author: {
+    '@type': 'Organization',
+    name: 'Threshold Sun Games',
+    url: 'https://thresholdsungames.com',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Threshold Sun Games',
+    url: 'https://thresholdsungames.com',
+  },
+};
 ---
 
-<Layout navLinks={[{ label: 'Home', href: base }]}>
+<Layout
+  navLinks={[{ label: 'Home', href: base }]}
+  title="Pyrebound // Threshold Sun Games"
+  description="A top-down exploration adventure where you push back the darkness by burning pyres — a non-stationary tower defense loop set in a mythological world. By Threshold Sun Games."
+  ogImage={new URL('games/pyrebound/splash_main_torch.png', Astro.site).href}
+  jsonLd={jsonLd}
+>
   <LogoBanner alt="Threshold Sun Games" />
   <Line />
   <!-- Title logotype -->
