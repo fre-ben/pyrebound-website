@@ -28,7 +28,7 @@ const jsonLd = {
   '@type': 'VideoGame',
   name: 'Pyrebound',
   description:
-    'A top-down exploration adventure where you push back the darkness by burning pyres made from the corpses of the undead — a non-stationary tower defense loop set in a mythological world.',
+    'A top-down exploration adventure where you bring hope back into a world of darkness by burning magical pyres made from the corpses of the undead.',
   genre: ['Exploration', 'Adventure', 'Tower Defense'],
   gamePlatform: 'PC',
   applicationCategory: 'Game',
@@ -36,11 +36,23 @@ const jsonLd = {
     '@type': 'Organization',
     name: 'Threshold Sun Games',
     url: 'https://thresholdsungames.com',
+    founder: 'Fabian Schocke',
+    foundingDate: '2026',
   },
   publisher: {
     '@type': 'Organization',
     name: 'Threshold Sun Games',
     url: 'https://thresholdsungames.com',
+  },
+  numberOfPlayers: {
+    '@type': 'QuantitativeValue',
+    unitCode: 'NMB',
+    value: 1,
+  },
+  playMode: 'SinglePlayer',
+  audience: {
+    '@type': 'PeopleAudience',
+    requiredMinAge: 4,
   },
 };
 ---
