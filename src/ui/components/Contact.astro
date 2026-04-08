@@ -1,4 +1,14 @@
-<section id="contact" class="px-2 sm:px-4 pb-6 text-sm">
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<section id="contact" class="text-center px-2 sm:px-4 pb-6 text-lg sm:text-xl font-bold">
   Let's get in touch:
-  <a href="mailto:contact@thresholdsungames.com" class="underline">contact@thresholdsungames.com</a>
+  <a
+    href="mailto:contact@thresholdsungames.com"
+    class="flex items-end m-auto max-w-min gap-1 underline"
+  >
+    <Icon name="pixel:envelope-solid" size={26} class="mx-auto" />
+    contact@thresholdsungames.com</a
+  >
 </section>
