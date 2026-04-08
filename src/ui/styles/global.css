@@ -20,6 +20,13 @@
 
 :root {
   --outer-container-width: 780px;
+  --header-height: 120px;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --header-height: 90px;
+  }
 }
 
 @theme {
@@ -64,6 +71,10 @@
 html {
   scroll-behavior: smooth;
   scrollbar-gutter: stable;
+}
+
+.scroll-target {
+  scroll-margin-top: var(--header-height);
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
