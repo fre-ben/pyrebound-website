@@ -1,5 +1,6 @@
 ---
 import Heading from '../../ui/components/Heading.astro';
+import Line from '../../ui/components/Line.astro';
 import LogoBanner from '../../ui/components/LogoBanner.astro';
 import Layout from '../../ui/layouts/Layout.astro';
 
@@ -25,11 +26,15 @@ const screenshots = [
 
 <Layout navLinks={[{ label: 'Home', href: base }]}>
   <LogoBanner alt="Threshold Sun Games" />
-
+  <Line />
   <!-- Title logotype -->
   <div class="flex justify-center px-4 py-2">
     <h1 class="sr-only">Pyrebound</h1>
-    <img src={`${base}games/pyrebound/title_type_main.png`} alt="Pyrebound" class="w-full max-w-sm" />
+    <img
+      src={`${base}games/pyrebound/title_type_main.png`}
+      alt="Pyrebound"
+      class="w-full max-w-sm"
+    />
   </div>
 
   <!-- Tagline -->
@@ -146,7 +151,7 @@ const screenshots = [
     </div>
     <img
       src={`${base}games/pyrebound/splash_secondary.png`}
-        alt="A figure holding a torch, surrounded by the Desiccated"
+      alt="A figure holding a torch, surrounded by the Desiccated"
       class="w-full sm:w-56 sm:shrink-0 object-cover"
       loading="lazy"
     />
