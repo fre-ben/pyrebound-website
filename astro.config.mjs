@@ -9,7 +9,16 @@ export default defineConfig({
   integrations: [
     icon({
       include: {
-        pixel: ['linkedin', 'youtube', 'instagram', 'bluesky', 'steam', 'twitch', 'times'],
+        pixel: [
+          'linkedin',
+          'youtube',
+          'instagram',
+          'bluesky',
+          'steam',
+          'twitch',
+          'times',
+          'envelope-solid',
+        ],
       },
     }),
   ],
