@@ -12,9 +12,24 @@ interface NavLink {
 interface Props {
   navLinks?: NavLink[];
   primaryColor?: string;
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  jsonLd?: Record<string, unknown>;
 }
 
-const { navLinks = [], primaryColor } = Astro.props;
+const {
+  navLinks = [],
+  primaryColor,
+  title = 'Threshold Sun Games',
+  description = 'Threshold Sun Games — an indie game studio creating atmospheric exploration adventures.',
+  ogImage,
+  jsonLd,
+} = Astro.props;
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
+const defaultOgImage = new URL('logo/white_solo_512w.png', Astro.site).href;
+const resolvedOgImage = ogImage ?? defaultOgImage;
 ---
 
 <html lang="en" class="dark">
@@ -37,6 +52,16 @@ const { navLinks = [], primaryColor } = Astro.props;
       type="font/woff2"
       crossorigin
     />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={resolvedOgImage} />
+    <meta property="og:locale" content="en_US" />
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
     <script is:inline src={`${import.meta.env.BASE_URL}scripts/main.js`}></script>
   </head>
   <body

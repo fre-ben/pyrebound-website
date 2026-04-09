@@ -1,15 +1,18 @@
 ---
-interface Props {
-  src?: string;
-  alt?: string;
-}
 
-const {
-  src = `${import.meta.env.BASE_URL}funding/eu_saxony_emblem.png`,
-  alt = 'Logo of EU and Saxony. This project is cofinanced by the EU. This measure is co-financed by tax funds from the Free State of Saxony.',
-} = Astro.props;
 ---
 
 <section id="funding" class="scroll-target w-full pb-6 px-2 sm:px-4">
-  <img src={src} alt={alt} class="max-w-full" />
+  <div class="flex flex-col items-center gap-4">
+    <img
+      src={`${import.meta.env.BASE_URL}funding/EU_Kofinanzierung_LightDark.svg`}
+      alt="This project is co-financed by the European Union."
+      class="max-w-full md:max-w-sm"
+    />
+    <img
+      src={`${import.meta.env.BASE_URL}funding/Sachsen_Kofinanzierung_LightDark.svg`}
+      alt="This measure is co-financed by tax funds from the Free State of Saxony."
+      class="max-w-full md:max-w-sm"
+    />
+  </div>
 </section>
