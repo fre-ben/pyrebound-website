@@ -6,7 +6,6 @@ import icon from 'astro-icon';
 export default defineConfig({
   output: 'static',
   site: 'https://thresholdsungames.com',
-  base: '/pyrebound-website/',
   integrations: [
     icon({
       include: {

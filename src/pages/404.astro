@@ -1,0 +1,29 @@
+---
+import LogoBanner from '../ui/components/LogoBanner.astro';
+import PrimaryButton from '../ui/components/PrimaryButton.astro';
+import Line from '../ui/components/Line.astro';
+import Layout from '../ui/layouts/Layout.astro';
+---
+
+<Layout
+  navLinks={[{ label: 'Home', href: '/' }]}
+  title="404 // Threshold Sun Games"
+  description="This page could not be found."
+>
+  <LogoBanner alt="Threshold Sun Games" />
+
+  <Line />
+
+  <section class="flex flex-col items-center justify-center gap-6 py-20 px-4 text-center">
+    <p
+      class="font-mono text-8xl sm:text-9xl font-medium tracking-tight text-foreground select-none"
+    >
+      404
+    </p>
+    <div class="flex flex-col gap-1">
+      <p class="text-xl font-semibold text-foreground">Page not found</p>
+      <p class="text-base text-muted">Lost in the dark?</p>
+    </div>
+    <PrimaryButton label="Back to home" url="/" />
+  </section>
+</Layout>
